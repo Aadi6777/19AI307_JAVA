@@ -29,7 +29,7 @@ Step 5: End
  ```
 /*
 Program to implement a StringBuilder Object Reference in Java
-Developed by: Aadipranav 
+Developed by: Aadipranav
 RegisterNumber:  212224230001
 */
 ```
