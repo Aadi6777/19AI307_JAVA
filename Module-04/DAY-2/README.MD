@@ -1,87 +1,94 @@
-# Ex.No:4(B)  IMPLEMENT SOLID PRINCIPLES IN JAVA PROGRAM 
-
-## QUESTION:
-At an international airport, only one Radar Control Tower exists. This tower is responsible for handling all flight communications regardless of how many flights are coming in. Each incoming flight must contact this tower to register its approach.
-
-To ensure safety and consistency, all flights must communicate with the same instance of the tower. If multiple towers are created, it may lead to inconsistent instructions — a huge risk in aviation.
-
-Your task is to simulate this system using the Singleton pattern.
+# Ex.No:4(B) INTRODUCTION TO JAVA INHERITANCE
 
 ## AIM:
-To simulate an airport radar communication system using the Singleton pattern, ensuring that all incoming flights register through a single shared instance of the RadarControlTower.
+To write a Java program for below situation, Student object contains member 'Stu_Id'. It contains object named course, which contains its own informations such as Degree, Branch, Year of Studying.
 
 ## ALGORITHM :
-1. Create a class RadarControlTower with a private static instance variable and  private constructor to prevent multiple object creation.
 
-2. A static getInstance() method that creates the object only once and returns the same instance each time.
+1. Start
 
-3. A registerFlight() method to store flight names and return the count.
+2. Define class Subject:
 
-4. Read the number of incoming flights.
+   Declare four String variables: subject1, subject2, subject3, subject4.
 
-5. For each flight, read the flight name.
+   Create a method dispSub(String subject1, String subject2, String subject3, String subject4):
 
-6. Get the Singleton instance using RadarControlTower.getInstance().
+   Print the four subjects separated by spaces.
 
-7. Register the flight and print the updated total.
+3. Define class Student:
 
-8. Ensure every flight interacts with the same RadarControlTower instance.
+   Declare an int variable Stu_Id.
 
+   Create an object obj of class Subject.
+
+   Create a method disp(int id):
+
+   Print the student ID.
+
+   Call dispSub method of Subject object obj, passing "B.Tech", "IT", "Third", "year".
+
+4. Define class Main:
+
+   In the main method:
+
+   Create an object of Student class.
+
+   Call the disp method on the Student object, passing 101 as the student ID.
+
+5. End
 
 ## PROGRAM:
  ```
 /*
-Program to implement a SOLID Principles in Java Program
-Developed by: Aadipranav 
+Program to implement a Inheritance using Java
+Developed by: Aadipranav
 RegisterNumber: 212224230001
 */
 ```
 
-## SOURCE CODE:
-```java
-import java.util.*;
+## Sourcecode.java:
+```
 
-class RadarControlTower {
-    private static RadarControlTower instance = null;
-    private List<String> flights;
-    private RadarControlTower() {
-        flights = new ArrayList<>();
+class Subject
+{
+    
+    String subject1,subject2,subject3,subject4;
+      
+    void dispSub(String subject1,String subject2,String subject3,String subject4)
+    {
+        System.out.println(subject1+" "+subject2+" "+subject3+" "+subject4);
     }
-    public static RadarControlTower getInstance() {
-        if (instance == null) {
-            instance = new RadarControlTower();
-        }
-        return instance;
-    }
-    public int registerFlight(String flightName) {
-        flights.add(flightName);
-        return flights.size();
+}
+class Student
+{
+    int Stu_Id;
+    Subject obj = new Subject();
+    
+    
+    void disp(int id)
+    {
+        System.out.println(id);
+        obj.dispSub("B.Tech","IT","Third","year");
     }
 }
 
-public class prog {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        sc.nextLine();
-        for (int i = 0; i < n; i++) {
-            String flight = sc.nextLine();
-            RadarControlTower tower = RadarControlTower.getInstance();
-            int total = tower.registerFlight(flight);
-            System.out.println(flight + " registered with Radar Control Tower. Total Flights: " + total);
-        }
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Student obj = new Student();
+        obj.disp(101);
+        
     }
 }
 ```
 
-
 ## OUTPUT:
-
-<img width="1208" height="379" alt="image" src="https://github.com/user-attachments/assets/5fb14572-34c6-451b-a4fd-0df6aee4fc3c" />
-
+```
+Input      Expected                 Got
+---        101                      101
+           B.Tech IT Third year     B.Tech IT Third year
+```
 ## RESULT:
 
-Therefore the program successfully ensures that all flights communicate with a single RadarControlTower instance using the Singleton pattern.
-
-
-
+Thus the Java program to implement the program for below situation, Student object contains member 'Stu_Id'. It contains object named course, which contains its own informations such as Degree, Branch, Year of Studying was  executed successfully.
