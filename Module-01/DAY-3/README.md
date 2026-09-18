@@ -1,60 +1,57 @@
-# Ex.No:1(C) LOOPING STATEMENT
-
-## QUESTION:
-Display Factors of a Number
-
+# Ex.No:1(C) CONTROL STATEMENTS
 
 ## AIM:
-To write a Java program that reads an integer from the user and displays all the factors of the given number.
+To develop a Java program to check given number is zero or not.
 
 ## ALGORITHM :
-1.Start the program and read an integer n from the user.
-
-2.Loop from 1 to n and check if each number i divides n exactly (i.e., n % i == 0).
-
-3.If yes, print i as a factor.
-
-4.Continue the loop until all factors are printed.
-
-5.End the program.
-
-
+1.	Start the program.
+2.	Declare an integer variable 'num'
+3.	Create a Scanner object 'sc' to read input from the user
+4.	Read an integer input from the user and store it in 'num'
+5.	Check if 'num' is equal to 0:
+a.	If true, print "Given number is Zero"
+b.	If false, print 'num' followed by " is Non-Zero"
+6.	End
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Looping Statement using Java
-Developed by: Aadipranav 
+Program to implement a class & objects using Java
+Developed by: Aadipranav
 RegisterNumber: 212224230001
 */
 ```
 
-## SOURCE CODE:
-```java
+## Sourcecode.java:
+
+```
 import java.util.Scanner;
 
-public class Factors {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-
-        System.out.print("Factors: ");
-        for (int i = 1; i <= n; i++) {
-            if (n % i == 0) { 
-                System.out.print(i + " ");
-            }
+public class Demo
+{
+    public static void main(String[] args)
+    {
+       Scanner sc=new Scanner(System.in);
+       int num=sc.nextInt();
+        if(num==0)
+        System.out.println("Given number is Zero");
+        else
+        {
+        	 System.out.println(num+ " is Non-Zero");
         }
     }
 }
+
+
 ```
 
 ## OUTPUT:
 
-<img width="783" height="324" alt="image" src="https://github.com/user-attachments/assets/aec35b44-acab-4431-893b-df99fc8c8cd4" />
+<img width="504" alt="image" src="https://github.com/user-attachments/assets/9b9a2b38-6e99-4eba-b01f-e2e592e15150" />
 
 ## RESULT:
 
-Therefore, the program successfully reads a number from the user and computes its factors.
+Thus, the Java program to check given number is zero or not was created successfully.
 
 
 
