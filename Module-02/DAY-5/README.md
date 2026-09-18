@@ -1,80 +1,71 @@
-# Ex.No:2(E) ACCESS MODIFIERS
-
-## QUESTION:
-Create a class Employee with method display(). Inside display(), return the current object using this. Create another method that calls display().printName()
-
+# Ex.No:2(E)  SMALLEST ELEMENT IN AN ARRAY
 
 ## AIM:
-To create an Employee class where the display() method returns the current object using this, and demonstrate calling display().printName() from another method.
-
+To write a Java program that reads an array size and elements from the user and then finds and prints the smallest element in the array.
 ## ALGORITHM :
-1. Create a class Employee with a variable name.
-
-2. Write a method setName() to assign value to name.
-
-3. Write a method display() that returns the current object using return this;.
-
-4. Write a method printName() to print the employee name.
-
-5. Add another method show() that internally calls display().printName().
-
-6. In the main() method, read the employee name from the user.
-
-7.Create an Employee object and set the name.
-
-8. Call both display().printName() and show() to demonstrate method chaining.
-
-
-
-
+1.	Start the program.
+2.	Read the size of the array from the user.
+3.	Declare an array of the given size.
+4.	Read the array elements from the user.
+5.	Initialize a variable min with the first element of the array.
+6.	Traverse the array using a loop.
+7.	Compare each element with min. If an element is smaller, update min.
+8.	After the loop ends, print the smallest number.
+9.	End the program.
+	
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Access Modifiers using Java
-Developed by: Ahil Santo A
-RegisterNumber: 212224040018
+Program to implement a Smallest Element in an Array
+Developed by: Aadipranav
+RegisterNumber: 212224230001
 */
 ```
 
-## SOURCE CODE:
-```java
+## Sourcecode.java:
+
+```
 import java.util.Scanner;
 
-class Employee {
-    String name;
-
-    void setName(String name) {
-        this.name = name;  
-    }
-
-    Employee display() {
-        return this;  
-    }
-
-    void printName() {
-        System.out.println("Employee Name: " + name);
-    }
-}
-
-class prog {
+public class LargestElement {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String inputName = scanner.nextLine();
 
-        Employee emp = new Employee();
-        emp.setName(inputName);
-        emp.display().printName();  
+        int size = scanner.nextInt();
+        int[] array = new int[size];
+
+        for (int i = 0; i < size; i++) {
+            array[i] = scanner.nextInt();
+        }
+
+        int largest = array[0]; // Assume the first element is the largest initially
+
+        for (int i = 1; i < size; i++) {
+            if (array[i] > largest) {
+                largest = array[i];
+            }
+        }
+
+        System.out.println("The largest element in the array is: " + largest);
+
+        scanner.close();
     }
 }
+
 ```
+
+
+
 
 
 ## OUTPUT:
 
-<img width="686" height="326" alt="image" src="https://github.com/user-attachments/assets/954fafa4-a638-4044-b666-3322017194cd" />
+<img width="759" alt="image" src="https://github.com/user-attachments/assets/7bb0f0a3-f60f-4e0a-ab84-8e9e3d8bc429" />
+
 
 
 ## RESULT:
 
-Therefore the program successfully returns the current object using this inside the display() method.
+Thus the java program successfully reads the array size and elements from the user and correctly finds and prints the smallest number in the array.
+
