@@ -1,85 +1,71 @@
-# Ex.No:2(D) VARIABLE SCOPE AND CONSTRUCTOR
-
-## QUESTION:
-Write a class that uses a constructor to initialize variables and overrides toString() method.
+# Ex.No:2(D) MULTI-DIMENSIONAL ARRAY
 
 ## AIM:
-To write a Java program that initializes object variables using a constructor and overrides the toString() method to display object details in a readable format.
+To create a java program that returns the sum of all the values in a 2D array.
 
 ## ALGORITHM :
-
-1. Define a class Student with two instance variables:
-
-     String name
-
-     int age
-
-2. Create a parameterized constructor to initialize these variables.
-
-3. Override the toString() method to return the student details in a formatted string.
-
-4. In the main() method:
-
-    - Read the name and age from the user.
-
-    - Create a Student object using the constructor.
-
-5. Print the object, which automatically calls the overridden toString() method.
-
-6. End the program.
+1.	Start the program.
+2.	Import `Scanner` and define class `sum`
+3.	In `main`:
+-	a) Create `Scanner` object `sc`
+-	b) Read `rows` and `cols` from user
+-	c) Declare 2D array `arr[rows][cols]`
+4.	Populate `arr` using nested loops with user input
+5.	Initialize `sum` to `0`
+6.	Calculate the sum of all elements in `arr` using nested loops
+7.	Print "The sum of all values in the 2D array is: " + `sum`
+8.	End
 
 
 
 ## PROGRAM:
  ```
 /*
-Program to implement a Variable scope and Constructor using Java
-Developed by: Aadipranav S
+Program to implement a Multi Dimensional Array using Java
+Developed by: Aadipranav
 RegisterNumber: 212224230001
 */
 ```
 
-## SOURCE CODE:
+## Sourcecode.java:
+```
+import java.util.*;
 
-```java
-import java.util.Scanner;
-
-class Student {
-    String name;
-    int age;
-
-    public Student(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{name='" + name + "', age=" + age + "}";
-    }
-}
-
-public class StudentDemo {
+public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        int age = scanner.nextInt();
+        Scanner scan = new Scanner(System.in);
 
-        Student student = new Student(name, age);
-        System.out.println(student.toString());
+        int rows = scan.nextInt();
+        int cols = scan.nextInt();
+
+        int[][] arr = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                arr[i][j] = scan.nextInt();
+            }
+        }
+
+        int sum = 0;
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                sum += arr[i][j];
+            }
+        }
+
+        System.out.println("The sum of all values in the 2D array is: " + sum);
     }
 }
 ```
 
 
+
+
 ## OUTPUT:
 
-<img width="896" height="395" alt="image" src="https://github.com/user-attachments/assets/0b280b01-a09a-4749-b733-41411f01b00a" />
+![image](https://github.com/user-attachments/assets/3f404087-5274-461b-8f9c-9c861acfaa75)
 
 
 ## RESULT:
 
-Therefore the program successfully creates a student object using the constructor.
-
-
-
+Thus the java program that returns the sum of all the values in a 2D array was executed successfully.
